@@ -18,6 +18,7 @@ class testTransliteration(unittest.TestCase):
         self.assertRaises(SchemeNameError, load_scheme, "not_a_scheme")
         scheme = load_scheme("test")
         self.assertEqual(scheme.convert("a"), "b")
+        self.assertEqual(scheme.convert("azq"), "bwQ")
 
 if __name__ == '__main__':
     unittest.main()
