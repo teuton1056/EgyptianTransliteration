@@ -42,10 +42,4 @@ class Scheme:
         defaults to an empty string"""
         return joiner.join([self._convert_char(char) for char in string])
 
-scheme = Scheme("test")
-print(scheme.name)
-scheme._register_char('c','z')
-scheme._register_char('y','i')
-scheme._register_char('y','j')
-
 
