@@ -13,5 +13,11 @@ class TestScheme(unittest.TestCase):
     def test_convert_char(self):
         self.assertEqual(self.scheme._convert_char('a'), 'b')
 
+class testTransliteration(unittest.TestCase):
+    def test_load_scheme(self):
+        self.assertRaises(SchemeNameError, load_scheme, "not_a_scheme")
+        scheme = load_scheme("test")
+        self.assertEqual(scheme.convert("a"), "b")
+
 if __name__ == '__main__':
     unittest.main()

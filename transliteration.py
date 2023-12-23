@@ -22,6 +22,6 @@ def load_scheme(name: str) -> Scheme:
         scheme = Scheme(name)
         lines = f.readlines()
         for line in lines:
-            src_char, dest_char = line.split('\t')
-            scheme._register_char(src_char, dest_char)
+            src_char, dest_char = line.split('|')
+            scheme._register_char(src_char.lstrip(), dest_char.strip())
         return scheme
