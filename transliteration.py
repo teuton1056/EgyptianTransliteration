@@ -1,7 +1,5 @@
 from scheme import Scheme, AmbiguousRequestError
 import os
-class SchemeNameError(Exception):
-    pass
 
 def load_scheme(name: str) -> Scheme:
     """loads a scheme from a file"
@@ -17,7 +15,7 @@ def load_scheme(name: str) -> Scheme:
     elif os.path.isfile(os.path.join(".schemes", name + ".scheme")):
         name = os.path.join(".schemes", name)
     else:
-        raise SchemeNameError("The scheme {} does not exist".format(name))
+        raise FileExistsError("The scheme {} does not exist".format(name))
     with open(name + ".scheme", 'r') as f:
         scheme = Scheme(name)
         lines = f.readlines()
